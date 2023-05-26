@@ -2,13 +2,14 @@ import { Link } from "react-router-dom"
 import ItemCount from "../ItemCount/ItemCount"
 const Item = ({id, name,img, price,stock}) => {
     return(
-        <article>
+         <div className='card-contenedor'>
+        <article className='card'>
             <header>
             <h2>{name}</h2>
             </header>
             <picture>
-                <img src={img} alt={name} />
-                <section>
+                <img className='img-Item' src={img} alt={name} />
+                <section className='card-contenido'>
                     <p>
                         Precio: ${price}
                     </p>
@@ -22,6 +23,7 @@ const Item = ({id, name,img, price,stock}) => {
                 <ItemCount initial={1} stock={10} onAdd={(quantity)=> console.log(`Compraste ${quantity} items.`)}/>
             </picture>
         </article>
+        </div>
     )
 }
 
